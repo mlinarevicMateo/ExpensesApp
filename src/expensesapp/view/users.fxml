@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="396.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="expensesapp.controller.UsersController">
+    <stylesheets>
+        <URL value="@users.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="adminsTableView" layoutY="26.0" prefHeight="174.0" prefWidth="449.0">
+        <columns>
+          <TableColumn fx:id="usernameColumnAdmin" prefWidth="100.0" text="Username" />
+            <TableColumn fx:id="userSinceColumnAdmin" prefWidth="116.0" text="User since" />
+          <TableColumn fx:id="adminSinceColumn" prefWidth="116.0" text="Admin since" />
+            <TableColumn fx:id="addedByColumnAdmin" prefWidth="116.0" text="Added By" />
+        </columns>
+      </TableView>
+      <Label layoutX="179.0" layoutY="4.0" text="Administrators">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="199.0" layoutY="206.0" text="All users">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="usersTableView" layoutY="226.0" prefHeight="174.0" prefWidth="449.0">
+         <columns>
+            <TableColumn fx:id="usernameColumn" prefWidth="136.0" text="Username" />
+            <TableColumn fx:id="userSinceColumn" prefWidth="184.0" text="User since" />
+            <TableColumn fx:id="addedByColumn" prefWidth="128.0" text="Added By" />
+         </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dddddd" height="123.0" layoutX="453.0" layoutY="26.0" stroke="#9a9a9a" strokeType="INSIDE" width="142.0" />
+      <TextField fx:id="username" layoutX="458.0" layoutY="39.0" prefHeight="25.0" prefWidth="134.0" promptText="Username" />
+      <PasswordField fx:id="password" layoutX="458.0" layoutY="82.0" prefHeight="25.0" prefWidth="134.0" promptText="Password" />
+      <Button fx:id="addNewUserButton" layoutX="480.0" layoutY="113.0" mnemonicParsing="false" onAction="#addNewUser" text="Add new user" />
+      <Button layoutX="453.0" layoutY="175.0" mnemonicParsing="false" onAction="#removeAdmin" text="Remove admin" />
+      <Button layoutX="453.0" layoutY="226.0" mnemonicParsing="false" onAction="#addAdmin" text="Add admin" />
+      <Button layoutX="453.0" layoutY="271.0" mnemonicParsing="false" onAction="#deleteUser" text="Delete selected user" />
+      <Button fx:id="backToExpensesButton" layoutX="454.0" layoutY="361.0" mnemonicParsing="false" onAction="#backToExpenses" text="Back to Expenses" />
+      <Label fx:id="addUserLabel" layoutX="454.0" layoutY="149.0" prefHeight="17.0" prefWidth="142.0" textFill="RED" />
+   </children>
+</AnchorPane>

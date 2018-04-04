@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="expensesapp.controller.ExpensesController">
+    <stylesheets>
+        <URL value="@expenses.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="204.0" layoutY="47.0" text="Aproximate expenses per day:" />
+      <Label layoutX="14.0" layoutY="13.0" text="Total balance: " />
+      <Text fx:id="balance" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <VBox focusTraversable="true" layoutX="210.0" layoutY="13.0" prefHeight="200.0" prefWidth="90.0">
+         <children>
+            <ChoiceBox id="choiceBoxMonth" fx:id="choiceBoxMonth" prefHeight="25.0" prefWidth="90.0" />
+         </children>
+      </VBox>
+      <VBox focusTraversable="true" layoutX="306.0" layoutY="13.0" prefHeight="200.0" prefWidth="90.0">
+         <children>
+            <ChoiceBox id="choiceBoxYear" fx:id="choiceBoxYear" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="90.0" />
+         </children>
+      </VBox>
+      <Label layoutX="12.0" layoutY="105.0" text="Expenses:" />
+      <Text fx:id="expenses" layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <TableView fx:id="expensesTableView" layoutY="183.0" prefHeight="317.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="nameTableColumn" prefWidth="200.0" text="Name" />
+            <TableColumn fx:id="priceTableColumn" prefWidth="112.0" text="Price" />
+            <TableColumn fx:id="dateTableColumn" prefWidth="141.0" text="Date" />
+            <TableColumn fx:id="timeTableColumn" prefWidth="146.0" text="Time" />
+        </columns>
+      </TableView>
+      <Text fx:id="aproximate" layoutX="377.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="amountToAdd" layoutX="442.0" layoutY="16.0" prefHeight="25.0" prefWidth="103.0" promptText="Add money ( € )" />
+      <Button fx:id="addMoney" layoutX="553.0" layoutY="16.0" mnemonicParsing="false" onAction="#addBalance" text="Add" />
+      <Label fx:id="addBalanceLabel" layoutX="425.0" layoutY="47.0" prefHeight="17.0" prefWidth="167.0" textFill="RED" />
+      <TextField fx:id="expenseName" layoutX="444.0" layoutY="72.0" promptText="Name of expense" />
+      <TextField fx:id="expensePrice" layoutX="444.0" layoutY="101.0" prefHeight="25.0" prefWidth="103.0" promptText="Price of expense ( € )" />
+      <Button fx:id="addExpense" layoutX="553.0" layoutY="101.0" mnemonicParsing="false" onAction="#addExpense" text="Add" />
+      <Button layoutX="496.0" layoutY="154.0" mnemonicParsing="false" onAction="#deleteExpense" text="Delete expense" />
+      <Button fx:id="logout_button" layoutX="11.0" layoutY="154.0" mnemonicParsing="false" text="Logout" />
+      <Label fx:id="addExpenseLabel" graphicTextGap="0.0" layoutX="444.0" layoutY="137.0" prefHeight="15.0" prefWidth="149.0" textFill="RED" />
+      <Label layoutX="12.0" layoutY="61.0" text="Remaining balance: " />
+      <Text fx:id="remainingBalance" layoutX="14.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" AnchorPane.topAnchor="73.41796875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
